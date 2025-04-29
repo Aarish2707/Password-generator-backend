@@ -21,7 +21,6 @@ public class PasswordUtility {
             case "HIGH" -> LowerCase + UpperCase + numbers + SpecialChars;
             default -> throw new IllegalArgumentException("Invalid Strength level: " + strength);
         };
-
         if ( length <= 0){
             throw new IllegalArgumentException("Length of password must be greater than zero!!");
         }
