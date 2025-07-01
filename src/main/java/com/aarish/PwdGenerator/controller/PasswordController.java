@@ -8,7 +8,7 @@ import com.aarish.PwdGenerator.service.PasswordService;
 
 @RestController
 @RequestMapping("/api/password")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class PasswordController {
 
     @Autowired
