@@ -12,11 +12,11 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // apply to all paths
-                        .allowedOrigins("https://password-generator-backend-production-c5c7.up.railway.app") // frontend URL
+                registry.addMapping("/**") // allow all API paths
+                        .allowedOrigins("https://password-generator-backend-production-0581.up.railway.app") // your frontend origin
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(false);
+                        .allowCredentials(false); // true only if using cookies or sessions
             }
         };
     }
