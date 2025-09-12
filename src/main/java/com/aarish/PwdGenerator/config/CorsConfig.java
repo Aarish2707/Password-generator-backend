@@ -15,6 +15,7 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
                         .allowedOrigins(
+                                "https://password-generate-zvep.onrender.com",
                                 "http://localhost:3000", // for local development
                                 "http://localhost:8080"  // for serving static files
                         )

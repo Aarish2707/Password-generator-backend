@@ -9,16 +9,26 @@ import com.aarish.PwdGenerator.service.PasswordService;
 @RestController
 @RequestMapping("/api/password")
 @CrossOrigin(origins = {
-        "https://password-generator-backend-production-0581.up.railway.app",
-        "http://localhost:3000"
+        "https://password-generate-zvep.onrender.com",
+        "http://localhost:3000",
+        "http://localhost:8080"
 })
 public class PasswordController {
 
     @Autowired
     private PasswordService passwordService;
 
+    @GetMapping("/test")
+    public String test() {
+        return "Backend is working!";
+    }
+
     @PostMapping("/generate")
-    public String generatePassword( @Valid  @RequestBody PasswordRequest request){
-        return passwordService.generatePassword(request.getStrength(), request.getLength());
+    public String generatePassword(@Valid @RequestBody PasswordRequest request) {
+        try {
+            return passwordService.generatePassword(request.getStrength(), request.getLength());
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to generate password: " + e.getMessage());
+        }
     }
 }

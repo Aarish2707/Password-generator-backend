@@ -3,7 +3,7 @@
     'use strict';
     
     const ALLOWED_ORIGINS = [
-        'https://password-generator-backend-production-0581.up.railway.app',
+        'https://password-generate-zvep.onrender.com',
         'http://localhost:3000',
         'http://localhost:8080'
     ];

@@ -29,7 +29,7 @@ public class SecurityConfig {
             
             // Content Security Policy - More permissive for React app
             httpResponse.setHeader("Content-Security-Policy", 
-                "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://password-generator-backend-production-0581.up.railway.app http://localhost:8080 http://localhost:3000; font-src 'self' data:");
+                "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' https://password-generate-zvep.onrender.com http://localhost:8080 http://localhost:3000; font-src 'self' data:");
             
             // Referrer Policy
             httpResponse.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
