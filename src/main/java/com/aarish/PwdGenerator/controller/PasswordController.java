@@ -8,7 +8,10 @@ import com.aarish.PwdGenerator.service.PasswordService;
 
 @RestController
 @RequestMapping("/api/password")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "https://password-generator-backend-production-0581.up.railway.app",
+        "http://localhost:3000"
+})
 public class PasswordController {
 
     @Autowired

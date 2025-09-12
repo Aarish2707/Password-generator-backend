@@ -13,11 +13,15 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOriginPatterns("https://*.up.railway.app") // ✅ wildcard for frontend on Railway
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(false);
+                registry.addMapping("/api/**")
+                        .allowedOrigins(
+                                "http://localhost:3000", // for local development
+                                "http://localhost:8080"  // for serving static files
+                        )
+                        .allowedMethods("GET", "POST", "OPTIONS")
+                        .allowedHeaders("Content-Type", "Authorization", "X-Requested-With", "Accept")
+                        .allowCredentials(true)
+                        .maxAge(3600); // Cache preflight for 1 hour
             }
         };
     }
